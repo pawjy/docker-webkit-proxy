@@ -1,0 +1,16 @@
+{
+  "circleci": {
+    "docker-build": [
+      {"name":"quay.io/wakaba/webkit-proxy"}
+    ],
+    "build": [
+    ],
+    "tests": [
+      "make test-ci",
+      
+      "true"
+    ],
+    "merger": true,
+    "gaa": true
+  }
+}
