@@ -1,4 +1,4 @@
-FROM quay.io/wakaba/base
+FROM quay.io/wakaba/base:stable
 
 RUN apt-get update && \
     apt-get install -y build-essential pkg-config checkinstall git \
@@ -19,9 +19,12 @@ RUN apt-get update && \
     npm install remotedebug-ios-webkit-adapter -g && \
     rm -rf /var/lib/apt/lists/*
 
-#   $ usbmuxd &
-#   $ ios_webkit_debug_proxy
-# or
-#   $ remotedebug_ios_webkit_adapter --port=9222
+##  docker run --privileged -p 9221:9221 -p 9222:9222 -p 9000:9000 \
+##      -it quay.io/wakaba/webkit-proxy bash
+##    # usbmuxd &
+##
+##    # ios_webkit_debug_proxy
+## or
+##    # remotedebug_ios_webkit_adapter --port=9000
 
 ## License: Public Domain.
