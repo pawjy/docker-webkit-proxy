@@ -1,4 +1,4 @@
-FROM debian:sid
+FROM quay.io/wakaba/base:sid
 
 RUN apt-get update && \
     apt-get install -y build-essential pkg-config checkinstall git \
